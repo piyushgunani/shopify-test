@@ -11,7 +11,6 @@ If node package is installed then run the below command
 >shopify theme dev
 
 Finally, run the dev command for preview the changes.
-npm run dev
+>npm run dev
 
-> [!TIP]
-Thank you!
+> [Thank you!]
