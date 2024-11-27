@@ -1,0 +1,8 @@
+  {% comment %} START - RENDER FROM PRODUCT CARD {% endcomment %}
+  <custom-product-card
+    title="{{ product.title }}"
+    price="{{ product.price | money }}"
+    link="{{ product.url }}"
+    image="{{ product.featured_image.src | img_url: 'medium' }}">
+  </custom-product-card>
+  {% comment %} END - RENDER FROM PRODUCT CARD {% endcomment %}

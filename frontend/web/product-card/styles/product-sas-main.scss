@@ -1,0 +1,46 @@
+$regular-white-color: #dddddd;
+$curve-border-bit: 8px;
+$regular-text-color: #000;
+$font-heading-family: Assistant, sans-serif;
+
+.product-card {  
+    &__title {
+      font-family: $font-heading-family;
+      font-size: 1.75rem;
+      margin: 8px 0;
+      color: $regular-text-color;
+    }
+  
+    &__price {
+      font-family: $font-heading-family;
+      font-size: 1.25rem;
+      color: $regular-text-color;
+    }
+  }
+.product-card-section{
+  display: grid;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  --grid-layout-gap: 20px;
+  --grid-column-count: 4;
+  --grid-item--min-width: 325px;
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count)); 
+  grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+  grid-gap: var(--grid-layout-gap);
+  justify-items: center;
+}
+.custom-wrapper-card{
+    border: 1px solid #f7f7f7;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.product-card-section__heading{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px;
+}

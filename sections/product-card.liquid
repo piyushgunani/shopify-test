@@ -1,0 +1,59 @@
+{% comment %} START - CUSTOM PRODICT CARD SECTOIN {% endcomment %}
+<div class="custom-wrapper-card">
+
+  {% if section.settings.product_cardtitle %}
+  <h2 class="product-card-section__heading inline-richtext h2">{{ section.settings.product_cardtitle }}</h2>  
+  {% endif %}
+
+  {% if section.settings.collection.products %}      
+              {% if section.settings.collection and section.settings.collection.products.size > 0 %}
+              <div class="product-card-section">
+                          {%- for product in section.settings.collection.products limit: 4 -%}
+                                      {% render 'custom-card-product',
+                                        product : product,
+                                        %}
+                          {% endfor %}
+              </div>
+              {% else %}
+                          <p class="center">No products found in the selected collection. Please add products to the collection or select a different one.</p>
+              {% endif %}
+  {% else %}
+                          <p class="center">Can you please select collection.</p>
+  {% endif %}
+    
+</div>
+
+
+{% comment %} END - OF CUSTOM PRODICT CARD SECTOIN {% endcomment %}
+
+<!-- START - SCHEMA USED FOR PREVIEWING PRODUCT BLOCK ON ANY PAGES EXCEPT HEADER FOOTER SECTION -->
+{% schema %}
+{
+  "name": "Product Card",
+   "tag": "section",
+  "class": "section", 
+   "disabled_on": {
+    "groups": ["header", "footer"]
+  }, 
+  "settings": [
+      {
+      "type": "text",
+      "id": "product_cardtitle",       
+      "label": "Section Title"
+      },
+      {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+      },   
+
+  ],
+  "presets": [
+    {
+      "name": "Custom Product Cards"
+    }
+  ]
+}
+{% endschema %}
+
+<!-- END - SCHEMA USED FOR PREVIEWING PRODUCT BLOCK ON ANY PAGES WITHOUT HEADER FOOTER -->
