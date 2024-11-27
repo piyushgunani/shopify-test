@@ -5,4 +5,5 @@ We have created product card at the web directory.
 > First go to root directory.
 
 npm install
+
 npm run dev
